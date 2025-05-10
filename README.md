@@ -1,12 +1,96 @@
-# React + Vite
+# E-Commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🧰 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔍 Search products by keyword
+- 🎛️ Sort by price, review count, and average rating
+- 🧮 Filter products by price range
+- 🛒 Shopping cart functionality
+- 📦 Responsive design for mobile and desktop
+- 🧭 React Router for navigation
+- 🐳 Fully Dockerized for easy deployment
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧱 Technologies Used
+
+| Technology        | Purpose                  |
+| ----------------- | ------------------------ |
+| React             | Frontend framework       |
+| React Router v6   | Navigation between pages |
+| Axios             | API request handling     |
+| Context API       | Global state management  |
+| TailwindCSS / CSS | Styling                  |
+| Docker            | Containerization         |
+
+---
+
+## 🗂️ Folder Structure
+
+```
+ecommerce-app/
+│
+├── public/ # Static assets like favicon, robots.txt
+├── src/
+│ ├── components/ # Reusable UI components
+│ │ ├── CartItem.jsx
+│ │ ├── FilterPanel.jsx
+│ │ ├── Footer.jsx
+│ │ ├── Header.jsx
+│ │ ├── Hero.jsx
+│ │ ├── Product.jsx
+│ │ ├── SearchBar.jsx
+│ │ ├── Sidebar.jsx
+│ │ └── SortControls.jsx
+│ │
+│ ├── contexts/ # React Context providers
+│ │ ├── CartContext.jsx
+│ │ ├── ProductContext.jsx
+│ │ └── SidebarContext.jsx
+│ │
+│ ├── pages/ # Page-level components
+│ │ ├── Home.jsx
+│ │ └── ProductDetails.jsx
+│ │
+│ ├── App.jsx # Main routing component
+│ ├── main.jsx # Entry point (React 18 setup)
+│ └── index.css # Global styles
+│
+├── Dockerfile # Docker configuration
+├── docker-compose.yml # Multi-container orchestration
+├── package.json
+└── README.md # This file
+
+```
+
+---
+
+## ▶️ How to Run the Project
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/ecommerce-app.git
+cd ecommerce-app
+```
+
+### 2. Install Dependencies & Run Locally (Optional)
+
+```
+npm install
+npm start
+```
+
+### 3. Run Using Docker (Recommended)
+
+```
+docker-compose up --build
+```
+
+The app will be available at:
+
+```
+http://localhost:3000
+```
