@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 
+// import searchbar
+import SearchBox from "./SearchBox";
 //import icons
 import { BsBag } from "react-icons/bs";
 import { Link } from "react-router";
@@ -33,6 +35,7 @@ const Header = () => {
             <img className="w-[40px]" src={Logo} alt="yfvy" />
           </div>
         </Link>
+        <SearchBox />
         {/* {card} */}
         <div
           onClick={() => setIsOpen(!isOpen)}
