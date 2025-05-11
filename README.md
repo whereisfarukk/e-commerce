@@ -84,14 +84,10 @@ npm run dev
 
 ### 3. Run Using Docker (Recommended)
 
-```
-docker build -t my-react-app .
-```
-
-#### ▶️Run the app
+#### ▶️ Run the app
 
 ```
-docker run -p 5173:5173 my-react-app
+docker-compose up --build
 ```
 
 #### The app will be available at:
