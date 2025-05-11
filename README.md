@@ -59,9 +59,8 @@ ecommerce-app/
 │ └── index.css # Global styles
 │
 ├── Dockerfile # Docker configuration
-├── docker-compose.yml # Multi-container orchestration
 ├── package.json
-└── README.md # This file
+└── README.md
 
 ```
 
@@ -86,11 +85,17 @@ npm start
 ### 3. Run Using Docker (Recommended)
 
 ```
-docker-compose up --build
+docker build -t my-react-app .
 ```
 
-The app will be available at:
+#### ▶️Run the app
 
 ```
-http://localhost:3000
+docker run -p 5173:5173 my-react-app
+```
+
+#### The app will be available at:
+
+```
+http://localhost:5173
 ```
