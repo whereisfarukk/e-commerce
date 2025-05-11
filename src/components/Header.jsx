@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 //sidebar context
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
+import { useProducts } from "../contexts/ProductContext";
 
 // import searchbar
 import SearchBox from "./SearchBox";
@@ -16,12 +17,18 @@ const Header = () => {
   const [isActive, setIsActive] = useState(true);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
+  const { updateSearchTerm } = useProducts();
   // event listner
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
     });
   });
+  // Handler to pass search term to context
+  const handleSearch = (term) => {
+    updateSearchTerm(term);
+  };
+
   return (
     <header
       className={`${
@@ -35,7 +42,7 @@ const Header = () => {
             <img className="w-[40px]" src={Logo} alt="yfvy" />
           </div>
         </Link>
-        <SearchBox />
+        <SearchBox onSearch={handleSearch} />
         {/* {card} */}
         <div
           onClick={() => setIsOpen(!isOpen)}

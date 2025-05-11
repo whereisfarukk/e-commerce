@@ -79,7 +79,7 @@ cd ecommerce-app
 
 ```
 npm install
-npm start
+npm run dev
 ```
 
 ### 3. Run Using Docker (Recommended)

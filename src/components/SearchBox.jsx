@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function SearchBox() {
+export default function SearchBox({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleInputChange = (e) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+
+    // Notify parent if onSearch is provided
+    if (onSearch) onSearch(term);
+  };
+
   return (
     <div className="mb-0 xl:w-96">
       <div className="relative flex w-full flex-wrap items-stretch">
-        {/* Icon inside input */}
+        {/* Search Icon */}
         <span
           className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
           id="basic-addon2"
@@ -23,13 +33,15 @@ export default function SearchBox() {
           </svg>
         </span>
 
-        {/* Input field with padding to accommodate the icon */}
+        {/* Input Field */}
         <input
           type="search"
           className="block w-full rounded border border-solid border-[#e1e1e1] bg-transparent py-[0.37rem] px-10 text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:border-primary focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] dark:border-[#e1e1e1] dark:text-black"
           placeholder="Search products"
           aria-label="Search"
           aria-describedby="button-addon2"
+          value={searchTerm}
+          onChange={handleInputChange}
         />
       </div>
     </div>
